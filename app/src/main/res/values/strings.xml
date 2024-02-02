@@ -3,4 +3,5 @@
     <string name="book_image">Book Image</string>
     <string name="book_name">Book Name</string>
     <string name="author_name">Author</string>
+    <string name="splash_quote">A reader lives a thousand lives before he dies.</string>
 </resources>
