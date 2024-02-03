@@ -49,33 +49,51 @@ public class MainActivity extends AppCompatActivity {
         arrBook.add(new BooksModel(R.drawable.wall_street, "Wall Street: America's Dream Palace", "By: Steve Fraser"));
         arrBook.add(new BooksModel(R.drawable.you_shall_know_them, "You Shall Know Them", "By: Vercors"));
 
-
         adapter = new RecyclerBookAdapter(this, arrBook);
         recyclerView.setAdapter(adapter);
 
         btnOpenDialog = findViewById(R.id.addButton);
+
+
+
         btnOpenDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Dialog dialog = new Dialog(MainActivity.this);
                 dialog.setContentView(R.layout.add_update_layout);
 
-                EditText edBook = findViewById(R.id.addBook);
-                EditText edAuthor = findViewById(R.id.addAuthor);
-                Button btnAction = findViewById(R.id.updateButton);
-                String txtBookName = "", txtAuthorName = "";
-                if (!edBook.getText().toString().equals("")) {
-                    txtBookName = edBook.getText().toString();
-                }
-                else {
-                    Toast.makeText(MainActivity.this, "Book Name can't be Empty", Toast.LENGTH_SHORT).show();
-                }
-                if (!edAuthor.getText().toString().equals("")) {
-                    txtAuthorName = edAuthor.getText().toString();
-                }
-                else {
-                    Toast.makeText(MainActivity.this, "Author's Name can't be Empty", Toast.LENGTH_SHORT).show();
-                }
+                EditText edBook = dialog.findViewById(R.id.addBook);
+                EditText edAuthor = dialog.findViewById(R.id.addAuthor);
+                Button btnAction = dialog.findViewById(R.id.updateButton);
+
+                btnAction.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String txtBookName = "", txtAuthorName = "";
+                        if (!edBook.getText().toString().equals("")) {
+                            txtBookName = edBook.getText().toString();
+                        }
+                        else {
+                            Toast.makeText(MainActivity.this, "Book Name can't be Empty", Toast.LENGTH_SHORT).show();
+                        }
+                        if (!edAuthor.getText().toString().equals("")) {
+                            txtAuthorName = edAuthor.getText().toString();
+                        }
+                        else {
+                            Toast.makeText(MainActivity.this, "Author's Name can't be Empty", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                        arrBook.add(new BooksModel(txtBookName, txtAuthorName));     // Setting values in the array
+
+                        adapter.notifyItemInserted(arrBook.size()-1);
+
+                        recyclerView.scrollToPosition(arrBook.size()-1);
+                        dialog.dismiss();
+
+                    }
+                });
+                dialog.show();
             }
         });
 

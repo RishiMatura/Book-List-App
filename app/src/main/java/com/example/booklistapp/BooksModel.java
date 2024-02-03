@@ -9,4 +9,9 @@ public class BooksModel {
         this.book_name = book_name;
         this.author_name = author_name;
     }
+
+    public BooksModel(String book_name, String author_name) {
+        this.book_name = book_name;
+        this.author_name = author_name;
+    }
 }
