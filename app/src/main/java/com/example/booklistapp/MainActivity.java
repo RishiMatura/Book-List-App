@@ -4,20 +4,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Dialog;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<BooksModel> arrBook = new ArrayList<>();
+    RecyclerView recyclerView;
+    RecyclerBookAdapter adapter;
+    FloatingActionButton btnOpenDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView recyclerView = findViewById(R.id.BookView);
+
+        recyclerView = findViewById(R.id.BookView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         arrBook.add(new BooksModel(R.drawable.acceptance, "Acceptance", "By: Jeff VanderMeer"));
@@ -38,7 +49,36 @@ public class MainActivity extends AppCompatActivity {
         arrBook.add(new BooksModel(R.drawable.wall_street, "Wall Street: America's Dream Palace", "By: Steve Fraser"));
         arrBook.add(new BooksModel(R.drawable.you_shall_know_them, "You Shall Know Them", "By: Vercors"));
 
-        RecyclerBookAdapter adapter = new RecyclerBookAdapter(this, arrBook);
+
+        adapter = new RecyclerBookAdapter(this, arrBook);
         recyclerView.setAdapter(adapter);
+
+        btnOpenDialog = findViewById(R.id.addButton);
+        btnOpenDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog(MainActivity.this);
+                dialog.setContentView(R.layout.add_update_layout);
+
+                EditText edBook = findViewById(R.id.addBook);
+                EditText edAuthor = findViewById(R.id.addAuthor);
+                Button btnAction = findViewById(R.id.updateButton);
+                String txtBookName = "", txtAuthorName = "";
+                if (!edBook.getText().toString().equals("")) {
+                    txtBookName = edBook.getText().toString();
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Book Name can't be Empty", Toast.LENGTH_SHORT).show();
+                }
+                if (!edAuthor.getText().toString().equals("")) {
+                    txtAuthorName = edAuthor.getText().toString();
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Author's Name can't be Empty", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+
     }
 }

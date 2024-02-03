@@ -4,4 +4,9 @@
     <string name="book_name">Book Name</string>
     <string name="author_name">Author</string>
     <string name="splash_quote">A reader lives a thousand lives before he dies.</string>
+    <string name="add_books">Add Books</string>
+    <string name="enter_book_name">Enter Book Name</string>
+    <string name="add_new_book">Add New Book</string>
+    <string name="add_author_name">Add Author Name</string>
+    <string name="add_book">Add Book</string>
 </resources>
