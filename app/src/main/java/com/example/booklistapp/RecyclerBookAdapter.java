@@ -99,7 +99,6 @@ public class RecyclerBookAdapter extends RecyclerView.Adapter<RecyclerBookAdapte
                                 });
                                 builder.show();
 
-
                         return true;
                     }
                 });
