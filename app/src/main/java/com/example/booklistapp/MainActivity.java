@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                         }
 
 
-                        arrBook.add(new BooksModel(txtBookName, txtAuthorName));     // Setting values in the array
+                        arrBook.add(new BooksModel(R.drawable.harry_potter, txtBookName, txtAuthorName));     // Setting values in the array
 
                         adapter.notifyItemInserted(arrBook.size()-1);
 

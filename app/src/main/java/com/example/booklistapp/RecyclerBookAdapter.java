@@ -1,8 +1,10 @@
 package com.example.booklistapp;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +67,7 @@ public class RecyclerBookAdapter extends RecyclerView.Adapter<RecyclerBookAdapte
                         authorName = edAuthor.getText().toString();
 
 
-                        booksModelArrayList.set(position, new BooksModel(bookName, authorName));
+                        booksModelArrayList.set(position, new BooksModel(R.drawable.harry_potter, bookName, authorName));
                         notifyItemChanged(position);
 
                         dialog.dismiss();
@@ -73,6 +75,34 @@ public class RecyclerBookAdapter extends RecyclerView.Adapter<RecyclerBookAdapte
                 });
                 dialog.show();
 
+
+                holder.rowLayout.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(context)
+                                .setTitle("Delete Book")
+                                .setMessage("Delete Book Entry?")
+                                .setIcon(R.drawable.baseline_delete_24)
+                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        booksModelArrayList.remove(position);
+                                        notifyItemRemoved(position);
+                                    }
+                                })
+                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+
+                                    }
+                                });
+                                builder.show();
+
+
+                        return true;
+                    }
+                });
 
             }
         });
