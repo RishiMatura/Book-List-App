@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cardView"
+        android:id="@+id/diaglogBox"
         android:layout_width="416sp"
         android:layout_height="458sp"
         android:background="@color/cardview_shadow_start_color"
@@ -18,7 +18,7 @@
         app:layout_constraintVertical_bias="0.497">
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/dialogBoxText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/add_books"
@@ -32,7 +32,7 @@
             app:layout_constraintVertical_bias="0.089" />
 
         <EditText
-            android:id="@+id/addBook"
+            android:id="@+id/dialogBoxaddBook"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:autofillHints="No"
@@ -49,7 +49,7 @@
             app:layout_constraintVertical_bias="0.281" />
 
         <EditText
-            android:id="@+id/addAuthor"
+            android:id="@+id/dialogBoxaddAuthor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -66,7 +66,7 @@
             app:layout_constraintVertical_bias="0.541" />
 
         <Button
-            android:id="@+id/updateButton"
+            android:id="@+id/dialogBoxBtnAction"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="17sp"
@@ -76,7 +76,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.431"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/addAuthor"
+            app:layout_constraintTop_toBottomOf="@+id/dialogBoxaddAuthor"
             app:layout_constraintVertical_bias="0.652" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

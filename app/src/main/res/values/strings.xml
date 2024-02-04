@@ -9,4 +9,6 @@
     <string name="add_author_name">Add Author\'s Name</string>
     <string name="add_book">Add Book</string>
     <string name="add_book_name">Add Book Name</string>
+    <string name="update_book_details">Update Book Details</string>
+    <string name="edit_name_of_book">Edit Name of Book</string>
 </resources>

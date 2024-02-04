@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
                 Dialog dialog = new Dialog(MainActivity.this);
                 dialog.setContentView(R.layout.add_update_layout);
 
-                EditText edBook = dialog.findViewById(R.id.addBook);
-                EditText edAuthor = dialog.findViewById(R.id.addAuthor);
-                Button btnAction = dialog.findViewById(R.id.updateButton);
+                EditText edBook = dialog.findViewById(R.id.dialogBoxaddBook);
+                EditText edAuthor = dialog.findViewById(R.id.dialogBoxaddAuthor);
+                Button btnAction = dialog.findViewById(R.id.dialogBoxBtnAction);
 
                 btnAction.setOnClickListener(new View.OnClickListener() {
                     @Override
