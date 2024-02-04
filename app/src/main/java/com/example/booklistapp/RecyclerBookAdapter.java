@@ -74,37 +74,38 @@ public class RecyclerBookAdapter extends RecyclerView.Adapter<RecyclerBookAdapte
                     }
                 });
                 dialog.show();
-
-
-                holder.rowLayout.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View v) {
-
-                        AlertDialog.Builder builder = new AlertDialog.Builder(context)
-                                .setTitle("Delete Book")
-                                .setMessage("Delete Book Entry?")
-                                .setIcon(R.drawable.baseline_delete_24)
-                                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        booksModelArrayList.remove(position);
-                                        notifyItemRemoved(position);
-                                    }
-                                })
-                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-
-                                    }
-                                });
-                                builder.show();
-
-                        return true;
-                    }
-                });
-
             }
         });
+
+        holder.rowLayout.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(context)
+                        .setTitle("Delete Book")
+                        .setMessage("Delete Book Entry?")
+                        .setIcon(R.drawable.baseline_delete_24)
+                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                booksModelArrayList.remove(position);
+                                notifyItemRemoved(position);
+
+
+                            }
+                        })
+                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+                builder.show();
+
+                return true;
+            }
+        });
+
     }
 
     @Override

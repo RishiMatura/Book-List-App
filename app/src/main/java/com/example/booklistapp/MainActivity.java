@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
         btnOpenDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,7 +97,13 @@ public class MainActivity extends AppCompatActivity {
                 dialog.show();
             }
         });
-
+        btnOpenDialog.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Toast.makeText(MainActivity.this, "Add New Book", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        });
 
     }
 }
