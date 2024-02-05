@@ -88,8 +88,16 @@ public class RecyclerBookAdapter extends RecyclerView.Adapter<RecyclerBookAdapte
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+
 //                                booksModelArrayList.remove(position);
 //                                notifyItemRemoved(position);
+
+
+//                                The above code did not work properly, while deleting layouts from the RecyclerView
+//                                after the first try it kept on deleting the wrong layout (wrong element from the array).
+//                                So the below code fixes it byInforming/Notifying the Adapter about the changes in
+//                                the ArrayList position.
+
 
                                 booksModelArrayList.remove(position);
 
