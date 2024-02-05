@@ -88,8 +88,16 @@ public class RecyclerBookAdapter extends RecyclerView.Adapter<RecyclerBookAdapte
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+//                                booksModelArrayList.remove(position);
+//                                notifyItemRemoved(position);
+
                                 booksModelArrayList.remove(position);
+
+                                // Notify the adapter about the removal
                                 notifyItemRemoved(position);
+
+                                // Notify the adapter about the range change to update positions
+                                notifyItemRangeChanged(position, booksModelArrayList.size());
 
 
                             }
