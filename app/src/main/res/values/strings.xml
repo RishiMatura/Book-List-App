@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Book List App</string>
+    <string name="app_name">Book List</string>
     <string name="book_image">Book Image</string>
     <string name="book_name">Book Name</string>
     <string name="author_name">Author</string>
