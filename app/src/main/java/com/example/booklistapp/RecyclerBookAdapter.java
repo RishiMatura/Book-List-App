@@ -76,6 +76,13 @@ public class RecyclerBookAdapter extends RecyclerView.Adapter<RecyclerBookAdapte
                         dialog.dismiss();
                     }
                 });
+                dialogBoxBtnAction.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        Toast.makeText(context, "Click to update Details", Toast.LENGTH_SHORT).show();
+                        return true;
+                    }
+                });
                 dialog.show();
             }
         });
