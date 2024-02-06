@@ -94,6 +94,13 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
+                btnAction.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View v) {
+                        Toast.makeText(MainActivity.this, "Add New Book", Toast.LENGTH_SHORT).show();
+                        return true;
+                    }
+                });
                 dialog.show();
             }
         });
