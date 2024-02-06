@@ -117,7 +117,6 @@ public class RecyclerBookAdapter extends RecyclerView.Adapter<RecyclerBookAdapte
                                 // Notify the adapter about the range change to update positions
                                 notifyItemRangeChanged(position, booksModelArrayList.size());
 
-
                             }
                         })
                         .setNegativeButton("No", new DialogInterface.OnClickListener() {
