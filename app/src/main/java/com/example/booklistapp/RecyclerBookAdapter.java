@@ -66,8 +66,10 @@ public class RecyclerBookAdapter extends RecyclerView.Adapter<RecyclerBookAdapte
                         bookName = edBook.getText().toString();
                         authorName = edAuthor.getText().toString();
 
+//                      The below line indicates that the default image of the layout is retained
+//                      while updating the details.
 
-                        booksModelArrayList.set(position, new BooksModel(R.drawable.harry_potter, bookName, authorName));
+                        booksModelArrayList.set(position, new BooksModel(booksModelArrayList.get(position).img, bookName, authorName));
                         notifyItemChanged(position);
 
                         dialog.dismiss();
