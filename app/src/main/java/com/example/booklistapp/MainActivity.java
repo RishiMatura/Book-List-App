@@ -55,8 +55,6 @@ public class MainActivity extends AppCompatActivity {
         btnOpenDialog = findViewById(R.id.addButton);
 
 
-
-
         btnOpenDialog.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
